@@ -52,7 +52,7 @@ exports.schemaToJson = function (schema, options = {}) {
   jsf.option(options);
   let result;
   try {
-    result = jsf(schema);
+    result = jsf.generate(schema);
   } catch (err) {
     result = err.message;
   }
@@ -284,12 +284,12 @@ exports.verifyPath = path => {
 exports.sandbox = (sandbox, script) => {
   try {
     const vm = require('vm');
-    sandbox = sandbox || {};	
-    script = new vm.Script(script);	
-    const context = new vm.createContext(sandbox);	
-    script.runInContext(context, {	
-      timeout: 3000	
-    });	      
+    sandbox = sandbox || {};
+    script = new vm.Script(script);
+    const context = new vm.createContext(sandbox);
+    script.runInContext(context, {
+      timeout: 3000
+    });
     return sandbox
   } catch (err) {
     throw err
