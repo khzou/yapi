@@ -25,10 +25,12 @@ module.exports = {
         "no-console": ["off"],
         "import/no-unresolved": ["off"],
         "react/no-find-dom-node": ["off"],
-        "no-empty": ["off"]
+        "no-empty": ["off"],
+        'no-unused-vars': 'off', // Turn off the no-unused-vars rule
+        'no-undef': 'off'       // Turn off the no-undef rule
         // "react/no-unescaped-entities": 0
     },
-    settings:{
+    settings: {
         "react": {
             "version": "detect"
         }
